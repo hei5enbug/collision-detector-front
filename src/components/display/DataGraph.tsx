@@ -1,8 +1,9 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { memo } from "react";
-import { ResponsiveLineCanvas } from "@nivo/line";
+import { Point, ResponsiveLine } from "@nivo/line";
 import { Box, SxProps, Typography } from "@mui/material";
 import { dataColorArray, ISensorData } from "../../interface/dataType";
+import { setTableInfo1, setTableInfo2 } from "../../features/counter/counterSlice";
+import { useAppDispatch } from "../../app/hooks";
 
 interface IDataGraphProps {
 	sx: SxProps;
@@ -11,6 +12,8 @@ interface IDataGraphProps {
 }
 
 function DataGraph({ sx, title, sensorDataList }: IDataGraphProps) {
+	const dispatch = useAppDispatch();
+
 	const tempData = [
 		{
 			id: "X",
@@ -32,6 +35,18 @@ function DataGraph({ sx, title, sensorDataList }: IDataGraphProps) {
 		},
 	];
 
+	const handleClickPoint = (point: Point, event: React.MouseEvent) => {
+		event.preventDefault();
+		const { index } = point;
+		const changeData = sensorDataList[index % 100];
+
+		if (title === "센서1") {
+			dispatch(setTableInfo1(changeData));
+		} else if (title === "센서2") {
+			dispatch(setTableInfo2(changeData));
+		}
+	};
+
 	const LineGraph = () => (
 		<Box
 			sx={{
@@ -41,7 +56,9 @@ function DataGraph({ sx, title, sensorDataList }: IDataGraphProps) {
 				backgroundColor: "white",
 			}}
 		>
-			<ResponsiveLineCanvas
+			<ResponsiveLine
+				useMesh
+				onClick={handleClickPoint}
 				data={tempData}
 				colors={dataColorArray}
 				margin={{ top: 10, right: 30, bottom: 10, left: 100 }}
@@ -56,7 +73,7 @@ function DataGraph({ sx, title, sensorDataList }: IDataGraphProps) {
 				axisTop={null}
 				axisRight={null}
 				axisBottom={null}
-				pointSize={1}
+				pointSize={6}
 				pointBorderWidth={1}
 				legends={[
 					{
@@ -70,16 +87,7 @@ function DataGraph({ sx, title, sensorDataList }: IDataGraphProps) {
 						itemHeight: 20,
 						itemOpacity: 0.75,
 						symbolSize: 12,
-						symbolShape: "diamond",
-						effects: [
-							{
-								on: "hover",
-								style: {
-									itemBackground: "rgba(0, 0, 0, .03)",
-									itemOpacity: 1,
-								},
-							},
-						],
+						symbolShape: "circle",
 					},
 				]}
 			/>
