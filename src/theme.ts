@@ -6,11 +6,14 @@ const theme = createTheme({
 			main: "#0052cc",
 		},
 		secondary: {
-			main: "#edf2ff",
+			main: "#999999",
+		},
+		background: {
+			default: "#ff0000",
 		},
 	},
 	typography: {
-		fontSize: 20,
+		fontSize: 16,
 		fontFamily: [
 			"-apple-system",
 			"BlinkMacSystemFont",

@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import Footer from "./Footer";
 import Header from "./header/Header";
-import MainContainer from "./MainContainer";
+import MainContainer from "./container/MainContainer";
 
 export default function Layout(): JSX.Element {
 	return (

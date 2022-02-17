@@ -1,15 +1,21 @@
+import { ISensorData } from "./../../interface/dataType";
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState, AppThunk } from "../../app/store";
+import getTestData from "../../lib/testUtils";
 import { fetchCount } from "./counterAPI";
 
 export interface CounterState {
 	value: number;
 	status: "idle" | "loading" | "failed";
+	testData1: ISensorData[];
+	testData2: ISensorData[];
 }
 
 const initialState: CounterState = {
 	value: 0,
 	status: "idle",
+	testData1: getTestData(100),
+	testData2: getTestData(100),
 };
 
 // The function below is called a thunk and allows us to perform async logic. It
@@ -63,6 +69,8 @@ export const { increment, decrement, incrementByAmount } = counterSlice.actions;
 // the state. Selectors can also be defined inline where they're used instead of
 // in the slice file. For example: `useSelector((state: RootState) => state.counter.value)`
 export const selectCount = (state: RootState): number => state.counter.value;
+export const selectTestData1 = (state: RootState): ISensorData[] => state.counter.testData1;
+export const selectTestData2 = (state: RootState): ISensorData[] => state.counter.testData2;
 
 // We can also write thunks by hand, which may contain both sync and async logic.
 // Here's an example of conditionally dispatching actions based on current state.

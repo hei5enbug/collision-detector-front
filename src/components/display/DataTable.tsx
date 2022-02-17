@@ -3,10 +3,11 @@ import { Box, Stack, StackProps, styled } from "@mui/material";
 import { dataColorArray, ISensorData } from "../../interface/dataType";
 
 interface IDataTableProps {
+	title: string;
 	sensorData: ISensorData;
 }
 
-function DataTable({ sensorData }: IDataTableProps) {
+function DataTable({ title, sensorData }: IDataTableProps) {
 	const { accX, accY, accZ, gyroX, gyroY, gyroZ } = sensorData;
 
 	const RowStack = (props: StackProps) => <Stack {...props} direction="row" spacing={spacing} />;
@@ -20,7 +21,7 @@ function DataTable({ sensorData }: IDataTableProps) {
 		fontSize: 14,
 		fontWeight: 600,
 		textAlign: "center",
-		color: "white",
+		color: "#ffffff",
 		borderRadius: "5px",
 	});
 
@@ -35,10 +36,10 @@ function DataTable({ sensorData }: IDataTableProps) {
 	const [colorX, colorY, colorZ] = dataColorArray;
 
 	return (
-		<Box sx={{ width: 350, boxSizing: "border-box", backgroundColor: "white", px: "10px", py: "8px", borderRadius: "10px" }}>
+		<Box sx={{ width: 350, height: 112, boxSizing: "border-box", backgroundColor: "white", px: "10px", py: "8px", borderRadius: "10px" }}>
 			<Stack spacing={spacing}>
 				<RowStack>
-					<DataBody>센서1</DataBody>
+					<DataBody>{title}</DataBody>
 					<DataHeader>X</DataHeader>
 					<DataHeader>Y</DataHeader>
 					<DataHeader>Z</DataHeader>

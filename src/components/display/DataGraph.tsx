@@ -87,8 +87,19 @@ function DataGraph({ sx, title, sensorDataList }: IDataGraphProps) {
 	);
 
 	return (
-		<Box sx={{ ...sx, display: "flex", boxSizing: "border-box", backgroundColor: "#99ff99", padding: "20px", borderRadius: "10px" }}>
-			<Typography sx={{ position: "absolute", width: 50, fontSize: 18, fontWeight: 600, marginX: "10px", marginTop: "20px" }}>{title}</Typography>
+		<Box sx={{ ...sx, display: "flex", boxSizing: "border-box", backgroundColor: "#99ff99", padding: "10px", borderRadius: "10px" }}>
+			<Typography
+				sx={{
+					position: "absolute",
+					width: 50,
+					fontSize: 18,
+					fontWeight: 600,
+					marginX: "15px",
+					marginTop: "20px",
+				}}
+			>
+				{title}
+			</Typography>
 
 			<LineGraph />
 		</Box>

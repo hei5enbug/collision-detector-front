@@ -20,11 +20,12 @@ function Timer() {
 			sx={{
 				...flexCenter(),
 				position: "absolute",
-				right: 30,
+				right: 110,
 				width: 200,
 				height: 30,
-				backgroundColor: "#94cdff",
+				backgroundColor: "#2f2f2f",
 				border: "1px solid white",
+				borderRadius: "5px",
 			}}
 		>
 			<Typography sx={{ color: "white", fontSize: 16, fontWeight: 600 }}>{format}</Typography>
