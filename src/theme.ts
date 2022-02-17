@@ -1,4 +1,4 @@
-import { createTheme } from "@mui/material/styles"
+import { createTheme } from "@mui/material/styles";
 
 const theme = createTheme({
 	palette: {
@@ -24,6 +24,6 @@ const theme = createTheme({
 			"Segoe UI Symbol",
 		].join(","),
 	},
-})
+});
 
-export default theme
+export default theme;

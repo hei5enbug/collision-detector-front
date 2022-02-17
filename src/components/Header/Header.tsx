@@ -1,6 +1,6 @@
-import { Box, Typography } from "@mui/material"
-import { flexCenter } from "../../utils/styleUtil"
-import Timer from "./Timer"
+import { Box, Typography } from "@mui/material";
+import { flexCenter } from "../../lib/styleUtil";
+import Timer from "./Timer";
 
 export default function Header(): JSX.Element {
 	return (
@@ -11,5 +11,5 @@ export default function Header(): JSX.Element {
 
 			<Timer />
 		</Box>
-	)
+	);
 }

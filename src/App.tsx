@@ -1,6 +1,6 @@
-import Layout from "./components/Layout"
-import { Box, ThemeProvider } from "@mui/material"
-import theme from "./theme"
+import Layout from "./components/Layout";
+import { Box, ThemeProvider } from "@mui/material";
+import theme from "./theme";
 
 function App(): JSX.Element {
 	return (
@@ -9,7 +9,7 @@ function App(): JSX.Element {
 				<Layout />
 			</Box>
 		</ThemeProvider>
-	)
+	);
 }
 
-export default App
+export default App;
