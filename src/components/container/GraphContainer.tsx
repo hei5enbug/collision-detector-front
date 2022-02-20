@@ -9,9 +9,9 @@ function GraphContainer() {
 	const tempDataList2 = useAppSelector(selectTestData2);
 
 	return (
-		<Stack sx={{ width: "100%", alignItems: "center" }} spacing="20px">
-			<DataGraph sx={{ width: "90%", height: 250 }} title="센서1" sensorDataList={tempDataList1} />
-			<DataGraph sx={{ width: "90%", height: 250 }} title="센서2" sensorDataList={tempDataList2} />
+		<Stack sx={{ width: "100%", height: "100%", alignItems: "center" }} spacing="20px">
+			<DataGraph sx={{ width: "90%", height: 300 }} title="센서1" sensorDataList={tempDataList1} />
+			<DataGraph sx={{ width: "90%", height: 300 }} title="센서2" sensorDataList={tempDataList2} />
 		</Stack>
 	);
 }

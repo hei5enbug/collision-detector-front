@@ -1,5 +1,5 @@
 {
-  "name": "collison-detector",
+  "name": "collision-detector",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

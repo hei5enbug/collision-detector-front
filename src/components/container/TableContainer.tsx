@@ -9,7 +9,7 @@ function TableContainer() {
 	const tableInfo2 = useAppSelector(selectTableInfo2);
 
 	return (
-		<Stack sx={{ width: "100%", height: "100%", justifyContent: "center", alignItems: "center" }} direction="row" spacing="50px">
+		<Stack sx={{ height: "100%", alignItems: "center" }} direction="row" spacing="50px">
 			<DataTable title="센서1" sensorData={tableInfo1} />
 			<DataTable title="센서2" sensorData={tableInfo2} />
 		</Stack>
