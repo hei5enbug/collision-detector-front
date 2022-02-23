@@ -13,7 +13,7 @@ export default function Menu(): JSX.Element {
 	});
 
 	return (
-		<Stack sx={{ height: "100%", alignItems: "center" }} direction="row" spacing="10px">
+		<Stack sx={{ width: 400, height: "100%", alignItems: "center" }} direction="row" spacing="10px">
 			<CustomButton variant="contained" color="info">
 				LOG 저장시작
 			</CustomButton>

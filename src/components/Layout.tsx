@@ -11,7 +11,7 @@ export default function Layout(): JSX.Element {
 				alignItems: "center",
 				width: "100%",
 				height: "100%",
-				padding: "10px",
+				padding: "10px 40px",
 				boxSizing: "border-box",
 			}}
 		>
