@@ -1,9 +1,9 @@
 import { memo } from "react";
-import { Point, ResponsiveLine } from "@nivo/line";
 import { Box, SxProps, Typography } from "@mui/material";
 import { dataColorArray, ISensorData } from "../../interface/dataType";
-import { setTableInfo1, setTableInfo2 } from "../../features/counter/counterSlice";
+import { setTableInfo1, setTableInfo2 } from "../../store/collisionSlice";
 import { useAppDispatch } from "../../app/hooks";
+import { ResponsiveLine, Point } from "@nivo/line";
 
 interface IDataGraphProps {
 	sx: SxProps;
@@ -61,6 +61,7 @@ function DataGraph({ sx, title, sensorDataList }: IDataGraphProps) {
 				onClick={handleClickPoint}
 				data={tempData}
 				colors={dataColorArray}
+				pointLabelYOffset={1}
 				margin={{ top: 10, right: 30, bottom: 10, left: 100 }}
 				xScale={{ type: "point" }}
 				yScale={{
@@ -73,13 +74,14 @@ function DataGraph({ sx, title, sensorDataList }: IDataGraphProps) {
 				axisTop={null}
 				axisRight={null}
 				axisBottom={null}
+				axisLeft={null}
 				pointSize={6}
 				pointBorderWidth={1}
 				legends={[
 					{
 						anchor: "left",
 						direction: "column",
-						translateX: -80,
+						translateX: -10,
 						translateY: 30,
 						itemsSpacing: 0,
 						itemDirection: "left-to-right",

@@ -18,7 +18,6 @@
 		"indent": "off",
 		"quotes": ["error", "double"],
 		"prettier/prettier": ["error", { "semi": true }],
-		"linebreak-style": ["error", "unix"],
 		"react/self-closing-comp": ["error"],
 		"react/jsx-uses-react": "off",
 		"react/react-in-jsx-scope": "off",

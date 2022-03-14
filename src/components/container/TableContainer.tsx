@@ -1,7 +1,7 @@
 import { Stack } from "@mui/material";
 import { memo } from "react";
 import { useAppSelector } from "../../app/hooks";
-import { selectTableInfo1, selectTableInfo2 } from "../../features/counter/counterSlice";
+import { selectTableInfo1, selectTableInfo2 } from "../../store/collisionSlice";
 import DataTable from "../display/DataTable";
 
 function TableContainer() {
